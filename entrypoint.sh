@@ -62,6 +62,6 @@ CLIENT_BINARY="drone-ssh-1.7.5-linux-arm64"
 TARGET="${GITHUB_ACTION_PATH}/${CLIENT_BINARY}"
 echo "Will download ${CLIENT_BINARY} from ${DOWNLOAD_URL_PREFIX}"
 echo "curl -fL --retry 3 --keepalive-time 2 \"${DOWNLOAD_URL_PREFIX}/${CLIENT_BINARY}\" -o ${TARGET}"
-curl -fL --retry 3 --keepalive-time 2 "${DOWNLOAD_URL_PREFIX}/${CLIENT_BINARY}" -o ${TARGET}
+curl -fL --retry 3 --keepalive-time 2 "https://github.com/appleboy/drone-ssh/releases/download/v1.7.5/drone-ssh-1.7.5-linux-arm64" -o ${TARGET}
 chmod +x ${TARGET}
 sh -c "${TARGET} $*"
